@@ -1,0 +1,16 @@
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * _abs - Prints absolute number
+ *@int: Parameter type
+ * Description: Function that prints absolute number of a given numbers
+ *
+ * Return: Always 0 (Success)
+ *
+ */
+int _abs(int)
+{
+	abs();
+	return (0);
+}
