@@ -3,7 +3,7 @@
 
 /**
  * _isdigit - Checks if an entry is a digit and returns value
- * 
+ * @c: int type parameter
  * Return: 1 if digit while 0 if not
  *
  */
