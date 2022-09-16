@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -14,11 +15,11 @@ void more_numbers(void)
 		x = 0;
 		while (x < 15)
 		{
-			_putchar(x + '0');
+			putchar(x + '0');
 			x++;
 		}
 		i++;
-		_putchar('\n');
+		putchar('\n');
 	}
-	_putchar('\n');
+	putchar('\n');
 }
