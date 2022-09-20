@@ -7,13 +7,22 @@
  */
 void print_rev(char *s)
 {
-	int i, len, x;
+	int i, len;
+	char *a, *b, x;
 
 	len = strlen(s);
+	a = s;
+	b = s;
+	for (i = 0; i < len - 1; i++)
+		b++;
+
 	for (i = 0; i < len / 2; i++)
 	{
-		x = s[i];
-		s[i] = s[len - i - 1];
-		s[len - i - 1] = x;
+		x = *s;
+		*b = *a;
+		*a = x;
+
+		a++;
+		b--;
 	}
 }
