@@ -7,7 +7,13 @@
  */
 void print_rev(char *s)
 {
-	char rev;
+	int i, len, x;
 
-	rev = strrev(s);
+	len = strlen(s);
+	for (i = 0; i < len / 2; i++)
+	{
+		x = s[i];
+		s[i] = s[len - i - 1];
+		s[len - i - 1] = x;
+	}
 }
