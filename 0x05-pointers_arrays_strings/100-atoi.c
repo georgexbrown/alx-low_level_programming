@@ -9,8 +9,16 @@
  */
 int _atoi(char *s)
 {
-	int c;
+	int c, i;
 
-	c = atoi(s);
+	c = 0;
+	while (s[c] != '\0')
+	{
+		if (s[c] >= '1' && s[c] <= '9')
+		{
+			i = atoi(s[c]);
+		}
+		c++;
+	}
 	return (c);
 }
