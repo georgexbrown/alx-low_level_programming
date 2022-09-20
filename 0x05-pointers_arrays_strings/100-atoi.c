@@ -9,15 +9,15 @@
  */
 int _atoi(char *s)
 {
-	int c, i;
+	int i;
 
-	while (s[c] != '\0')
+	while (s != '\0')
 	{
-		if (s[c] >= '1' && s[c] <= '9')
+		if (s >= '1' && s <= '9')
 		{
-			i = atoi(s[c]);
+			i = atoi(s);
 		}
-		c++;
+		s++;
 	}
 	return (i);
 }
