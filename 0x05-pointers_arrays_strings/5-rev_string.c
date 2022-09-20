@@ -1,6 +1,7 @@
 #include "main.h"
 
-/** rev_string - Function to reverse a string
+/**
+ * rev_string - Function to reverse a string
  * @s: integer pointer parameter
  *
  */
@@ -24,7 +25,7 @@ void rev_string(char *s)
 		{
 			n = *(x + b);
 			*(x + b) = *(x + (b - 1));
-			*(x +(b - 1)) = n;
+			*(x + (b - 1)) = n;
 		}
 	}
 }
