@@ -7,24 +7,25 @@
  */
 void print_rev(char *s)
 {
-	int i, len;
-	char *a, *b, x;
+	int count = 0, a, b;
+	char *x, n;
 
-	len = strlen(s);
-	a = s;
-	b = s;
-	for (i = 0; i < len-1; i++)
+	while (count >= 0)
 	{
-		b++;
+		if (s[count] == '\0')
+			break;
+
+		count++;
 	}
 
-	for (i = 0; i < len/2; i++)
+	x = s;
+	for (a = 0; a < (count - 1); a++)
 	{
-		x = *s;
-		*b = *a;
-		*a = x;
-
-		a++;
-		b--;
+		for (b = a + 1; b > 0; b++)
+		{
+			n = *(x + b);
+			*(x + b) = *(x + (b - 1));
+			*(x +(b - 1)) = n;
+		}
 	}
 }
