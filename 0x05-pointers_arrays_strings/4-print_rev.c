@@ -13,10 +13,12 @@ void print_rev(char *s)
 	len = strlen(s);
 	a = s;
 	b = s;
-	for (i = 0; i < len - 1; i++)
+	for (i = 0; i < len-1; i++)
+	{
 		b++;
+	}
 
-	for (i = 0; i < len / 2; i++)
+	for (i = 0; i < len/2; i++)
 	{
 		x = *s;
 		*b = *a;
