@@ -7,5 +7,7 @@
  */
 void print_rev(char *s)
 {
-	strrev(s);
+	char rev;
+
+	rev = strrev(s);
 }
