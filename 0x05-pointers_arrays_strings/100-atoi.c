@@ -10,47 +10,35 @@
  */
 int _atoi(char *s)
 {
-	int n = 0;
-    int sign = 1;
-    int ch;
+	unsigned int count = 0, size = 0, oi = 0, pn = 1, m = 1, i;
+
+	while (*(s + count) != '\0')
+	{
+		if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
+			break;
+		if (*(s + count) == '-')
+			pn *= -1;
+
+		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
+		{
+			if (size > 0)
+				m *= 10;
+			size++;
+		}
+		count++;
+	}
 
 
-    while (isspace(*s)) {
-        ++s;
-    }
-    while (*s == '-'){
-	    sign = -1;
-	    ++s;
-    }
-    while (*s == '+'){
-	    sign = 1;
-	    ++s;
-    }
-    while (*s == ' '){
-	    ++s;
-    }
-    if (*s == '-') {
-       sign = -1;
-        ++s;
-    } else if (*s == '+') {
-        sign = 1;
-        ++s;
-    } 
-    while (isdigit(*s)) {
-        if (n > INT_MAX/10) { /* EDIT: protect against overflow */
-            break;
-        }
-        n *= 10;
-        ch = *s - '0';
+	for (i = count - size; i < count; i++)
 
-        if (n > INT_MAX - ch) {
-            break;
-        }
-        n += ch;
-        ++s;
-    }
-    if (isdigit(*s)) {
-        return sign == 1 ? INT_MAX : INT_MIN;
-    }
-    return sign * n;
+	{
+
+		oi = oi + ((*(s + i) - 48) * m);
+
+		m /= 10;
+
+	}
+
+	return (oi * pn);
+
 }
