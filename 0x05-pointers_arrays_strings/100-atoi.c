@@ -26,6 +26,9 @@ int _atoi(char *s)
 	    sign = 1;
 	    ++s;
     }
+    while (*s == ' '){
+	    ++s;
+    }
     /** if (*s == '-') {
       *  sign = -1;
       *  ++s;
