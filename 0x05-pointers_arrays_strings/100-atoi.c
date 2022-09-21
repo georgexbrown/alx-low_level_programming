@@ -18,21 +18,21 @@ int _atoi(char *s)
     while (isspace(*s)) {
         ++s;
     }
-    while (atoi(*s) == '-'){
+    while (*s == '-'){
 	    sign = -1;
 	    ++s;
     }
-    while (atoi(*s) == '+'){
+    while (*s == '+'){
 	    sign = 1;
 	    ++s;
     }
-    if (*s == '-') {
-        sign = -1;
-        ++s;
-    } else if (*s == '+') {
-        sign = 1;
-        ++s;
-    }
+    /** if (*s == '-') {
+      *  sign = -1;
+      *  ++s;
+   * } else if (*s == '+') {
+     *   sign = 1;
+      *  ++s;
+    } */
     while (isdigit(*s)) {
         if (n > INT_MAX/10) { /* EDIT: protect against overflow */
             break;
