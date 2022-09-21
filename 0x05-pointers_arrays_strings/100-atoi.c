@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include "main.h"
-
+#include <limits.h>
 /**
  * _atoi - Function that converts a string to integer
  * @s: Character pointer parameter
@@ -12,6 +12,7 @@ int _atoi(char *s)
 {
 	int n = 0;
     int sign = 1;
+    int ch;
 
     while (isspace(*s)) {
         ++s;
@@ -28,7 +29,7 @@ int _atoi(char *s)
             break;
         }
         n *= 10;
-        int ch = *s - '0';
+        ch = *s - '0';
 
         if (n > INT_MAX - ch) {
             break;
