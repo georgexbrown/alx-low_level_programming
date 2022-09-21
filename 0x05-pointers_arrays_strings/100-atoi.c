@@ -9,15 +9,37 @@
  */
 int _atoi(char *s)
 {
-	int i;
+	int sign = 1;
+    long long i = 0, j = 0;
 
-	while (s != '\0')
-	{
-		if (s >= '1' && s <= '9')
-		{
-			i = atoi(s);
-		}
-		s++;
-	}
-	return (i);
+    while ((*s) != '\0' && isspace(*s)) {
+        ++s;
+    }
+
+    if (((*s)!='\0') && ((*s) == '+' || (*s) == '-')) {
+        if ((*s) == '-') {
+            sign = -1;
+        }
+        ++s;
+    }
+
+    if (((*s) != '\0') && (!isdigit(*s))) {
+        return 0;
+    }
+
+    while (((*s) != '\0') && (isdigit(*s))) {
+        i = i * 10 + (*s - '0');
+        j = i * sign;
+        cout << j << endl;
+        if (j > INT_MAX) {
+            return INT_MAX;
+        }
+        if (j < INT_MIN) {
+            return INT_MIN;
+        }
+
+        ++s;
+    }
+
+    return j;
 }
