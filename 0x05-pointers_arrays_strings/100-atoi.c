@@ -29,13 +29,13 @@ int _atoi(char *s)
     while (*s == ' '){
 	    ++s;
     }
-    /** if (*s == '-') {
-      *  sign = -1;
-      *  ++s;
-   * } else if (*s == '+') {
-     *   sign = 1;
-      *  ++s;
-    } */
+    if (*s == '-') {
+       sign = -1;
+        ++s;
+    } else if (*s == '+') {
+        sign = 1;
+        ++s;
+    } 
     while (isdigit(*s)) {
         if (n > INT_MAX/10) { /* EDIT: protect against overflow */
             break;
