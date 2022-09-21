@@ -14,15 +14,16 @@ int _atoi(char *s)
     int sign = 1;
     int ch;
 
+
     while (isspace(*s)) {
         ++s;
     }
-    while (*s == '-'){
-	    sign = 1;
+    while (atoi(*s) == '-'){
+	    sign = -1;
 	    ++s;
     }
-    while (*s == '+'){
-	    sign = -1;
+    while (atoi(*s) == '+'){
+	    sign = 1;
 	    ++s;
     }
     if (*s == '-') {
