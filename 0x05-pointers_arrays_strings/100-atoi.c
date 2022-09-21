@@ -18,11 +18,11 @@ int _atoi(char *s)
         ++s;
     }
     while (*s == '-'){
-	    sign = -1;
+	    sign = 1;
 	    ++s;
     }
     while (*s == '+'){
-	    sign = 1;
+	    sign = -1;
 	    ++s;
     }
     if (*s == '-') {
