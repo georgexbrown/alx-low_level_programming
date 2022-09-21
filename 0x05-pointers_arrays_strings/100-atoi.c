@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <ctype.h>
 #include "main.h"
 
 /**
@@ -9,37 +10,34 @@
  */
 int _atoi(char *s)
 {
-	int sign = 1;
-    long long i = 0, j = 0;
+	int n = 0;
+    int sign = 1;
 
-    while ((*s) != '\0' && isspace(*s)) {
+    while (isspace(*s)) {
         ++s;
     }
-
-    if (((*s)!='\0') && ((*s) == '+' || (*s) == '-')) {
-        if ((*s) == '-') {
-            sign = -1;
-        }
+    if (*s == '-') {
+        sign = -1;
+        ++s;
+    } else if (*s == '+') {
+        sign = 1;
         ++s;
     }
-
-    if (((*s) != '\0') && (!isdigit(*s))) {
-        return 0;
-    }
-
-    while (((*s) != '\0') && (isdigit(*s))) {
-        i = i * 10 + (*s - '0');
-        j = i * sign;
-        cout << j << endl;
-        if (j > INT_MAX) {
-            return INT_MAX;
+    while (isdigit(*s)) {
+        if (n > INT_MAX/10) { /* EDIT: protect against overflow */
+            break;
         }
-        if (j < INT_MIN) {
-            return INT_MIN;
-        }
+        n *= 10;
+        int ch = *s - '0';
 
+        if (n > INT_MAX - ch) {
+            break;
+        }
+        n += ch;
         ++s;
     }
-
-    return j;
+    if (isdigit(*s)) {
+        return sign == 1 ? INT_MAX : INT_MIN;
+    }
+    return sign * n;
 }
