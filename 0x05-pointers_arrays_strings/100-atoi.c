@@ -17,6 +17,9 @@ int _atoi(char *s)
     while (isspace(*s)) {
         ++s;
     }
+    while (*s == '-' || *s == '+'){
+	    ++s;
+    }
     if (*s == '-') {
         sign = -1;
         ++s;
