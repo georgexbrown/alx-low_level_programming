@@ -3,13 +3,13 @@
 
 /**
  * string_toupper - Function that changes lowercase to uppercase
- * @*: Character pointer variable parameter
+ * @char *: Character pointer variable parameter
  * Return: char *
  */
 char *string_toupper(char *)
 {
-	int up;
+	char str;
 
-	up = toupper(*);
-	return (up);
+	toupper(str[*]);
+	return (0);
 }
