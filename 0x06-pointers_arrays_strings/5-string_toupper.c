@@ -6,10 +6,10 @@
  * @char *: Character pointer variable parameter
  * Return: char *
  */
-char *string_toupper(char *)
+char *string_toupper(char *str)
 {
-	char str;
+	char up;
 
-	toupper(str[*]);
-	return (0);
+	up = toupper(str);
+	return (up);
 }
