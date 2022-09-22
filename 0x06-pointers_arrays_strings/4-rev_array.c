@@ -20,6 +20,7 @@ void reverse_array(int *a, int n)
 	{
 		a[i] = aux[i];
 		_putchar(a[i] + '0');
+		_putchar(',');
 		_putchar(' ');
 	}
 	_putchar('\n');
