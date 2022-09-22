@@ -6,10 +6,9 @@
  * @char *: Character pointer variable parameter
  * Return: char *
  */
-char *string_toupper(char *)
+char *string_toupper(char *s)
 {
 	int i = 0;
-	char *s;
 
 	while (*(s + i) != '\0')
 	{
