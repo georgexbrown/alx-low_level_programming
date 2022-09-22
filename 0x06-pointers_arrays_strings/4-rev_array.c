@@ -6,7 +6,7 @@
  * @n: Integer parameter that represents number of items in array
  *
  */
-void reverse(int *a, int n)
+void reverse_array(int *a, int n)
 {
 	int i;
 	int aux[5];
