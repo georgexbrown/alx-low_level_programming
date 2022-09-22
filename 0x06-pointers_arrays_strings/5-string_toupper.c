@@ -6,10 +6,16 @@
  * @char *: Character pointer variable parameter
  * Return: char *
  */
-char *string_toupper(char *str)
+char *string_toupper(char *)
 {
-	char up;
+	int i = 0;
+	char *s;
 
-	up = toupper(*str);
-	return (up);
+	while (*(s + i) != '\0')
+	{
+		if ((*(s + i) >= 97) && (*(s + i) <= 122))
+			*(s + i) = *(s + i) - 32;
+		i++;
+	}
+	return (0);
 }
