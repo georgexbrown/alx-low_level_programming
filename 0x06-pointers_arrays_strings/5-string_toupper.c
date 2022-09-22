@@ -10,6 +10,6 @@ char *string_toupper(char *str)
 {
 	char up;
 
-	up = toupper(str);
+	up = toupper(*str);
 	return (up);
 }
