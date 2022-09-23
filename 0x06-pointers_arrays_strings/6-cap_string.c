@@ -19,7 +19,7 @@ char *cap_string(char *c)
 		{
 			if (*(c + i) == separator[j])
 			{
-				if (*(c + (i + 1)) >= 97) && (*(c + (i + 1)) <= 122)
+				if ((*(c + (i + 1)) >= 97) && (*(c + (i + 1)) <= 122))
 					*(c + (i + 1)) = *(c + (i + 1)) - 32;
 				break;
 			}
