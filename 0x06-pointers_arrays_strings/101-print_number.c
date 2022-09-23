@@ -2,7 +2,7 @@
 
 /**
  * print_number - Function that print numbers
- *
+ *@n: integer parameter 
  * Return: nothing
  */
 void print_number(int n)
