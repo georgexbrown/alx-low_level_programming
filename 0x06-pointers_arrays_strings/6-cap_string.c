@@ -8,9 +8,9 @@
 char *cap_string(char *c)
 {
 	int i = 0, j;
-	int separator[] = {32};
+	int separator[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	if ((*(c + i) >= 97) && (*c + i) <= 122)
+	if (*(c + i) >= 97 && *(c + i) <= 122)
 		*(c + i) = *(c + i) - 32;
 	i++;
 	while (*(c + i) != '\0')
