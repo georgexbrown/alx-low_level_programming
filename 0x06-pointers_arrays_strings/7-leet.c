@@ -8,9 +8,9 @@
 char *leet(char *s)
 {
 	int i = 0, j;
-	int lowercase[] = {97};
-	int uppercase[] = {};
-	int num = {};
+	int lowercase[] = {97, 101, 111, 116, 108};
+	int uppercase[] = {65, 69, 79, 84, 76};
+	int num = {52, 51, 48, 55, 49};
 
 	while (*(s + i) != '\0')
 	{
