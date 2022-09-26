@@ -3,7 +3,7 @@
 
 /**
  * _memcpy - Functions that copies memory area
- * @dest: Pointer with type void to the destination array 
+ * @dest: Pointer with type void to the destination array
  * where content is to be copied
  * @src: Pointer to the source of data to be copied from
  * @n: Number of bytes to be copied from src
