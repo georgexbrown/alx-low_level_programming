@@ -7,9 +7,10 @@
  * @argv: Argument vector
  * Return: 0 (Success) or 1 (Failure)
  */
-int main(int argc, char *argv[]__attribute__((unused)))
+int main(int argc, char *argv[])
 {
 	int i, j, sum = 0;
+
 	for (i = 1; i < argc; i++)
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
