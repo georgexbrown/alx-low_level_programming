@@ -13,8 +13,19 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 		i = 0;
+	else
+	{
+		for (i = 0; str[i]; i++)
+			;
+	}
+
 	if (s2 == NULL)
 		j = 0;
+	else
+	{
+		for (j = 0; str[j]; j++)
+			;
+	}
 
 	k = i + j + 1;
 	str = malloc(k * sizeof(char));
