@@ -1,4 +1,5 @@
-#include <stdlid.h>
+#include <stdlib.h>
+#include "main.h"
 
 /**
  * argstostr - Function that concatenates arguments of a program
