@@ -2,14 +2,16 @@
 #define _STRUCT_DOG_
 
 /**
+ * dog_t - typedef for struct dog
+ */
+typedef struct dog dog_t;
+
+/**
  * struct dog - name of structure
  * @name: first variable
  * @age: second variable
  * @owner: third variable
  */
-
-typedef struct dog dog_t;
-
 struct dog
 {
 	char *name;
