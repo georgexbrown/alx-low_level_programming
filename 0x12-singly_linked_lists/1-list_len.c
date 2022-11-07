@@ -7,8 +7,11 @@
  */
 size_t list_len(const list_t *h)
 {
-	unsigned int num;
+	unsigned int num = 0;
 	list_t *current = h;
+
+	if (!h)
+		return (0);
 
 	while (current)
 	{
