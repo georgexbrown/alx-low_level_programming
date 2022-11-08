@@ -3,7 +3,7 @@
 /**
  * startUp -  function that prints texts before the main executes
  */
-void startUp(void)__attribute__((constructor))
+void startUp(void)__attribute__((constructor));
 
 void startUp(void)
 {
