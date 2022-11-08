@@ -9,17 +9,12 @@
 void free_list(list_t *head)
 {
 	list_t *tmp;
-	list_t *current;
 
-	if (head)
-	{
-		current = head;
-		while (current)
+		while (head)
 		{
-			tmp = current;
-			current = current->next;
+			tmp = head;
+			free(tmp->str);
+			head = head->next;
 			free(tmp);
 		}
-		head = NULL;
-	}
 }
