@@ -20,6 +20,6 @@ void free_list(list_t *head)
 			current = current->next;
 			free(tmp);
 		}
-		*head = NULL;
+		head = NULL;
 	}
 }
