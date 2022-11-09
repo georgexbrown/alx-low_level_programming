@@ -32,27 +32,27 @@ int copy_file(const char *filefrom, const char *fileto)
 
 	if (filefrom == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file, %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
 	firstFD = open(filefrom, O_RDONLY);
 	if (firstFD == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file, %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
 
 	secondFD = open(fileto, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (secondFD == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to, %s\n", fileto);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fileto);
 		exit(99);
 	}
 
 	sysRead = read(firstFD, buffer, 1024);
 	if (sysRead == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file, %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 		_close(firstFD);
 		exit(98);
 	}
@@ -61,7 +61,7 @@ int copy_file(const char *filefrom, const char *fileto)
 		sysWrite = write(secondFD, buffer, sysRead);
 		if (sysWrite == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to, %s\n", fileto);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fileto);
 			_close(secondFD);
 			exit(99);
 		}
