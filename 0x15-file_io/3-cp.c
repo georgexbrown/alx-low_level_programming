@@ -12,7 +12,7 @@ int _close(const int fd)
 	exitFD = close(fd);
 	if (exitFD == -1)
 	{
-		printf("Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 	return (0);
@@ -32,27 +32,27 @@ int copy_file(const char *filefrom, const char *fileto)
 
 	if (filefrom == NULL)
 	{
-		printf("Error: Can't read from file, %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file, %s\n", filefrom);
 		exit(98);
 	}
 	firstFD = open(filefrom, O_RDONLY);
 	if (firstFD == -1)
 	{
-		printf("Error: Can't read from file, %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file, %s\n", filefrom);
 		exit(98);
 	}
 
 	secondFD = open(fileto, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (secondFD == -1)
 	{
-		printf("Error: Can't write to, %s\n", fileto);
+		dprintf(STDERR_FILENO, "Error: Can't write to, %s\n", fileto);
 		exit(99);
 	}
 
 	sysRead = read(firstFD, buffer, 1024);
 	if (sysRead == -1)
 	{
-		printf("Error: Can't read from file, %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file, %s\n", filefrom);
 		_close(firstFD);
 		exit(98);
 	}
@@ -61,7 +61,7 @@ int copy_file(const char *filefrom, const char *fileto)
 		sysWrite = write(secondFD, buffer, sysRead);
 		if (sysWrite == -1)
 		{
-			printf("Error: Can't write to, %s\n", fileto);
+			dprintf(STDERR_FILENO, "Error: Can't write to, %s\n", fileto);
 			_close(secondFD);
 			exit(99);
 		}
@@ -86,7 +86,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp %s %s\n", argv[1], argv[2]);
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	resp = copy_file(argv[1], argv[2]);
