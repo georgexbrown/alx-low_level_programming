@@ -41,7 +41,7 @@ int copy_file(const char *filefrom, const char *fileto)
 		printf("Error: Can't read from file, %s\n", filefrom);
 		exit(98);
 	}
-	
+
 	secondFD = open(fileto, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (secondFD == -1)
 	{
@@ -70,6 +70,8 @@ int copy_file(const char *filefrom, const char *fileto)
 
 /**
  * main - Main entry
+ * @argc: argument count
+ * @argv: argument vector
  *
  * Return: Always 0 (Success)
  *
@@ -77,7 +79,7 @@ int copy_file(const char *filefrom, const char *fileto)
 int main(int argc, char **argv)
 {
 	int resp;
-	
+
 	if (argc != 3)
 	{
 		dprintf(2, "Usage: cp %s %s\n", argv[1], argv[2]);
