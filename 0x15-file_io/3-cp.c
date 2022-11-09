@@ -56,12 +56,16 @@ int copy_file(const char *filefrom, const char *fileto)
 		_close(firstFD);
 		exit(98);
 	}
-	sysWrite = write(secondFD, buffer, sysRead);
-	if (sysWrite == -1)
+	while (sysRead > 0)
 	{
-		printf("Error: Can't write to, %s\n", fileto);
-		_close(secondFD);
-		exit(99);
+		sysWrite = write(secondFD, buffer, sysRead);
+		if (sysWrite == -1)
+		{
+			printf("Error: Can't write to, %s\n", fileto);
+			_close(secondFD);
+			exit(99);
+		}
+		sysRead = read(firstFD, buffer, 1024);
 	}
 	_close(firstFD);
 	_close(secondFD);
