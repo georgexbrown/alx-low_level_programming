@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc *.o -fPIC -shared -o jackpotrig.so
-LD_PRELOAD=$PWD/jackpotrig.so
+gcc *.o -fPIC -shared -o libjackpotrig.so
+LD_PRELOAD=$PWD/libjackpotrig.so
