@@ -23,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 	for (count = index; ht->array[count]; count++)
 	{
-		if (strcmp(ht->array[i]->key, key) == 0)
+		if (strcmp(ht->array[count]->key, key) == 0)
 		{
 			free(ht->array[count]->value);
 			ht->array[count]->value = valueCopy;
